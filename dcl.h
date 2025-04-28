@@ -13,6 +13,6 @@
 #define udpint __uint128_t
 #define dpint __uint128_t
 
-void sparse_matrix_multiply_HLS(spint x[20], spint y[20], spint z[20]);
+void mod_mul(spint x[20], spint y[20], spint z[20]);
 
 
