@@ -1,7 +1,7 @@
 open_project project_1
 
 # set top function of the HLS design
-set_top sparse_matrix_multiply_HLS
+set_top mod_mul
 
 # add source file
 add_files top.cpp
@@ -24,7 +24,8 @@ csynth_design
 cosim_design
 
 # export generated RTL as an IP; can be commented if not needed
-export_design -format ip_catalog -flow syn
+# export_design -format ip_catalog -flow syn 
+export_design -format ip_catalog -flow impl 
 
 
 
