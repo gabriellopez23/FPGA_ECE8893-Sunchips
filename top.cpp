@@ -750,7 +750,7 @@ static void inline modmul64(const spint *a, const spint *b, spint *c) {
 }
 
 // Sparse Matrix Multiplication: A (CSR) * B (CSC) = C (Dense)
-void sparse_matrix_multiply_HLS(spint x[20], spint y[20], spint z[20])//data_t values_A[N * M], int column_indices_A[N * M], int row_ptr_A[N + 1], 
+void mod_mul(spint x[20], spint y[20], spint z[20])//data_t values_A[N * M], int column_indices_A[N * M], int row_ptr_A[N + 1], 
                              //data_t values_B[M * K], int row_indices_B[M * K], int col_ptr_B[M + 1], hls::vector<data_t, K> C[N]) 
 {
 #pragma HLS interface m_axi port=x offset=slave bundle=mem1
@@ -760,15 +760,15 @@ void sparse_matrix_multiply_HLS(spint x[20], spint y[20], spint z[20])//data_t v
 //uint16_t uint32_t uint64_t
 
 	// i and j contains the number of iterations. 
-	/*for (int i=0;i<10;i++){
-		for (int j=0;j<2;j++) {
-			modmul16(x,y,z);
-			modmul16(z,x,y);
-			modmul16(y,z,x);
-			modmul16(x,y,z);
-			modmul16(z,x,y);
+	for (int i=0;i<1000;i++){
+		for (int j=0;j<20;j++) {
+			modmul64(x,y,z);
+			modmul64(z,x,y);
+			modmul64(y,z,x);
+			modmul64(x,y,z);
+			modmul64(z,x,y);
 		}
-    }*/
+    }
 	//re = (6557*169)%19;
 
 	//modmul16(x,y,z);
