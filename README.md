@@ -1,5 +1,5 @@
 
-# Final Project Topic 5: Hardware Design for Cryptographic Primitive - Modular Multiplication
+# Final Project Topic 5: Hardware Design for Cryptographic Primitive - Modular Multiplication :)
 
 ## Overview
 
