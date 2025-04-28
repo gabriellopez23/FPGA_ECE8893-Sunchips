@@ -10,7 +10,7 @@ int main() {
     y[0]=0xa9; y[1]=0x44b; y[2]=0x9ef; y[3]=0x1a3f; y[4]=0x11a3; y[5]=0x16b6; y[6]=0x14f0; y[7]=0x1675; y[8]=0x1c66; y[9]=0x5ec; y[10]=0x1854; y[11]=0x8cb; y[12]=0x34e; y[13]=0xe92; y[14]=0xa2e; y[15]=0x13f0; y[16]=0x1641; y[17]=0x11a0; y[18]=0x550; y[19]=0x97; 
 
     // Call HLS kernel to perform SpMM
-    sparse_matrix_multiply_HLS(x, y, z);
+    mod_mul(x, y, z);
 
     printf("modmul check 0x%06x\n",(int)z[0]&0xFFFFFF);
     return 0;
