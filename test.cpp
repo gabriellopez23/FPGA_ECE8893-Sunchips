@@ -17,7 +17,7 @@ public:
 
   double elapsed() {
     auto endTime = std::chrono::steady_clock::now();
-    std::chrono::duration<double, std::milli> duration = endTime - m_startTime;
+    std::chrono::duration<double, std::micro> duration = endTime - m_startTime;
     return duration.count();
   }
 
@@ -45,16 +45,16 @@ void test_modmul() {
   Timer timer;
   timer.start();
 
-  for (int i = 0; i < 100000; i++)
-    for (int j = 0; j < 200; j++) {
+//   for (int i = 0; i < 100000; i++)
+    // for (int j = 0; j < 200; j++) {
       modmul(x, y, z);
-      modmul(z, x, y);
-      modmul(y, z, x);
-      modmul(x, y, z);
-      modmul(z, x, y);
-    }
+    //   modmul(z, x, y);
+    //   modmul(y, z, x);
+    //   modmul(x, y, z);
+    //   modmul(z, x, y);
+    // }
   auto elapsed = timer.elapsed();
-  printf("Time taken for modmul: %.6f ms\n", elapsed);
+  printf("Time taken for modmul: %.8f us\n", elapsed);
 
   printf("modmul check 0x%06x\n", (int)z[0] & 0xFFFFFF);
 }
@@ -62,13 +62,13 @@ void test_modmul() {
 int main() {
 
 #ifdef BIT16
-	printf("16-bit multiplication\n");
+  printf("16-bit multiplication\n");
 #elif BIT32
-	printf("32-bit multiplication\n");
+  printf("32-bit multiplication\n");
 #else
-	printf("64-bit multiplication\n");
+  printf("64-bit multiplication\n");
 #endif
 
-	test_modmul();
-	return 0;
+  test_modmul();
+  return 0;
 }
