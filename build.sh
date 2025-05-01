@@ -1,6 +1,6 @@
 #!/bin/bash
 CC=g++
-CFLAG="-std=c++17 -Wall -O3"
+CFLAG="-std=c++17 -I/tools/software/xilinx/Vitis_HLS/2023.1/include -Wall -O3 "
 SRC="test.cpp"
 rm 16 32 64 2>/dev/null
 

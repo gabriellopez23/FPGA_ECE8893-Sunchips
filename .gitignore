@@ -4,3 +4,5 @@
 !*.cpp
 !*.sh
 !*.md
+!*.tcl
+!makefile
