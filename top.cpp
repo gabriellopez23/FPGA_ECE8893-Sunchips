@@ -67,15 +67,14 @@ REDUCTION:
   ut *= CongruentFactor;
 
   // Add the reduced bits to the first term
-  spint sum = v[0] + (ut & mask);
-
+  dpint sum = v[0] + (ut & mask);
 
   z_buf[0] = sum & mask;
 
   // Get the carry bits from the sum and the overflow bits
   spint carry = (sum >> Radix) + (spint)(ut >> Radix);
 
-  z_buf[1] = v[1] + carry;
+  z_buf[CarryIndex] = v[CarryIndex] + carry;
 
 // Set the rest of the limbs
 SET_LIMBS:

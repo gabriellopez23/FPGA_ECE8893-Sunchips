@@ -59,6 +59,9 @@ constexpr uint32_t OverflowBits = Radix * Nlimbs - Nbits;
 constexpr uint32_t FinalLimbRadix = Radix - OverflowBits; 
 constexpr bool LastLimbOverflows = Nbits < Radix * Nlimbs;
 
+constexpr uint32_t CarryIndex = Nlimbs < 2 ? 0 : 1;
+
+
 constexpr uint32_t CongruentFactor = 0x13; // 19 in decimal
 constexpr uint32_t ReductionFactor = CongruentFactor * (1 << OverflowBits);
 
