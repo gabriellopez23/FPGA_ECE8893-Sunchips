@@ -12,7 +12,7 @@ add_files -tb host.cpp
 open_solution "solution1"
 
 # FPGA part and clock configuration
-set_part {xczu3eg-sbva484-1-e}
+set_part {xcvu19p-fsva3824-2-e}
 
 # default frequency is 100 MHz
 #create_clock -period 4 -name default
